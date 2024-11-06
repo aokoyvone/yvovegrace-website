@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Feedback Table with Checkboxes</title>
+    <link rel="stylesheet" href="feedback.css">
+    <script src="feedback.js"></script>
+
+</head>
+<body>
+    <button><a href="index.html"><img src="back arrow.jpg" alt="" height="30px"width="30px"></a></button>   
+    <h2>Customers Feedback </h2>
+
+    <!-- Feedback Form -->
+    <form id="feedbackForm" onsubmit="addFeedback(); return false;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" required>
+        
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" rows="3" required></textarea>
+        
+        <button type="submit">Add Feedback</button>
+    </form>
+
+    <!-- Action Buttons -->
+    <button onclick="deleteSelected()">Delete Selected</button>
+    
+
+    <!-- Feedback Table -->
+    <table id="feedbackTable">
+        <thead>
+            <tr>
+                <th><input type="checkbox" onclick="toggleAll(this)"></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Feedback</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Feedback entries will appear here -->
+        </tbody>
+    </table>
+
+</body>
+</html>
